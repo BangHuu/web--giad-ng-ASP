@@ -1,0 +1,210 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Master Page</title>
+    <link rel="stylesheet" href="Css/HomePage.css" />
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+
+        }
+       .auto-style{width:100%;}
+       .auto-style a:hover{color:red;text-decoration:underline;}
+       .auto-style a{text-decoration:none;}
+       .title-header{color:white;
+                font-size:12px;
+                font-weight:bold;
+                text-decoration:none;
+               }
+       .title-header:hover{
+           color:yellow;
+       }
+       #product{
+           margin-left:170px;
+       }
+       .title-header:first-child{margin-left:50px;}
+        .auto-style3 {
+            width: 770px;
+        }
+        .auto-style7{
+            padding-left:50px;
+                     width:100%;
+        }
+        .auto-style9 {
+            width: 598px;
+        }
+        .auto-style12 {
+            width: 121px;
+        }
+        .auto-style13 {
+            width: 81px;
+        }
+        .auto-style14 {
+            width: 132px;
+        }
+        .auto-style15 {
+            margin-left: 0px;
+        }
+        .auto-style16 {
+            width: 330px;
+        }
+        .hidden{
+            display:none;
+           
+        }
+        .show{
+            display:inline-block;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table class="auto-style7">
+            <tr>
+                <td class="auto-style3">
+                    &nbsp;<asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/Images/logo_hanvico.png" PostBackUrl="~/trangchu.aspx"/></td>
+                <td>
+                    <table class="auto-style">
+                        <tr>
+                            <td >
+                                <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/Images/man-user.png" PostBackUrl="~/thongtincanhan.aspx" Width="30px"  />
+                            </td>
+                            <td >
+                                <asp:Label ID="lblUserName" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td >
+                                <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Dangnhap.aspx">Đăng nhập</asp:LinkButton>&nbsp;</td>
+                            <td >
+                                <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/trangchu.aspx" OnClick="LinkButton5_Click1">Đăng xuất</asp:LinkButton>&nbsp;</td>
+                            <td >
+                                <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/Dangki.aspx">Đăng kí thành viên</asp:LinkButton>&nbsp;</td>
+                            <td >
+                                <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/Hoptacbh.aspx">Hợp tác bán hàng</asp:LinkButton>&nbsp;</td>
+                            <td>
+                                <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/Taiapp.aspx">Tải App</asp:LinkButton>&nbsp;</td>
+                            
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <hr / style="width:90%;">
+        <br />
+        <table class="auto-style7">
+            <tr>
+                <td class="auto-style16">
+                    <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/logo.png" Width="100px" Height="50px" PostBackUrl="~/trangchu.aspx"/></td>
+                <td class="auto-style9">
+                    <asp:TextBox ID="txtSearch" runat="server" placeholder="Bạn đang tìm kiếm gì?" Height="30px" Width="574px" CssClass="auto-style15"></asp:TextBox></td>
+                <td>
+                    <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Images/cart.png" PostBackUrl="~/Giohang.aspx" Height="50px" Width="50px"  />
+            </tr>
+        </table>
+        <br />
+
+&nbsp;<table class="auto-style1">
+            <tr style="background-color:#dc3545;height:50px;">
+                <td >
+                    <a href="trangchu.aspx" class="title-header">TRANG CHỦ</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="danhmucsp.aspx" class="title-header">DANH MỤC SẢN PHẨM</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="sukien.aspx" class="title-header">SỰ KIỆN KHAI CHƯƠNG</a>
+                </td>
+            </tr>
+        </table>
+&nbsp;<div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+ </div>
+        <div class="footer">
+            <div class="logo-fotter">
+                <asp:ImageButton ID="btghh" CssClass="img-logo" runat="server" ImageUrl="~/Images/logo.png" />
+            </div>
+            <div class="line">
+                <asp:ImageButton CssClass="fotter-line"  ID="fotterline" runat="server" ImageUrl="~/Images/fotter.jpg" />
+            </div>
+            <div class="link-fotter">
+                <div class="box1">
+                    <p style="font-weight:bold;">HỖ TRỢ KHÁCH HÀNG</p>
+                    <ul>
+                        <li>
+                            <a href="#" style="color:darkred;">HOTLINE: 18001211</a>
+                        </li>
+                        <li>
+                            <a href="#">Hướng dẫn đặt hàng</a>
+                        </li>
+                        <li>
+                            <a href="#">Hướng dẫn thanh toán</a>
+                        </li>
+                        <li>
+                            <a href="#">Chính sách vận chuyển</a>
+                        </li>
+                        <li>
+                            <a href="#">Chính sách đổi trả</a>
+                        </li>
+                        <li>
+                            <a href="#">Câu hỏi thường gặp</a>
+                        </li>
+                        <li>
+                            <a href="#">Gửi yêu cầu hỗ trợ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box2">
+                     <p style="font-weight:bold; color:darkred">HPIONT</p>
+                    <ul>
+                        
+                        <li>
+                            <a href="#">Tích lũy và sử dụng HPOINT</a>
+                        </li>
+                        
+                    </ul>
+                    <p style="font-weight:bold;">THÔNG TIN CẦN BIẾT</p>
+                    <ul>
+                        <li><a href="#">Bảo mật thông tin</a></li>
+                        <li><a href="#">Điều khoản và điều kiện</a></li>
+                    </ul>
+                </div>
+                <div class="box3">
+                     <p style="font-weight:bold;">HANVICOLIVING.VN</p>
+                    <ul>
+                        <li>
+                            <a href="#">Về chúng tôi</a>
+                        </li>
+                        <li>
+                            <a href="#">Bán hàng cùng Hanvico</a>
+                        </li>
+                        <li>
+                            <a href="#">Hợp tác phát triển thương hiệu</a>
+                        </li>
+                        <li>
+                            <a href="#">Quy chế hoạt động</a>
+                        </li>
+                        <li>
+                            <a href="#">Tuyển dụng nhân tài</a>
+                        </li>
+                      </ul>
+                </div>
+                <div class="box4" > <p style="font-weight:bold;">TẢI ỨNG DỤNG TẠI</p>
+                    <p>
+                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/hlink.PNG" />
+                    </p>
+                    </div>
+            </div>
+            <div class="address">
+                <p>CÔNG TY HÀN VIỆT (CHĂN GỐI ĐỆM HANVICO)<br />
+                    Số GCNĐKDN: 0100955275 -Ngày cấp: 19/01/2016, sửa đổi lần thứ 4 ngày 03/03/2017<br />
+                    Nơi cấp: Sở kế hoạch và đầu tư Hà Nội<br />
+                    Địa chỉ: Km 14 Quốc lộ 1A, Thanh Trì, Hà Nội<br />
+
+                </p>
+                <p>@2019 All Rights Reserved By Hanvico.vn</p>
+                
+            </div>
+        </div>
+        
+    </form>
+</body>
+</html>
